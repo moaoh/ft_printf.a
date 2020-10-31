@@ -6,19 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:27:33 by junmkang          #+#    #+#             */
-/*   Updated: 2020/10/31 19:49:02 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/10/31 20:12:44 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 // printf("a = %d, b = %d", a, b);
-
-int				ft_prt(char *str, int len)
-{
-	write(1, str, len);
-	return (len);
-}
 
 int				ft_answer(char *format, va_list ap)
 {
@@ -33,15 +27,15 @@ int				ft_answer(char *format, va_list ap)
 		look = ft_strchr(&format[i], '%');
 		if (look)
 		{
-			str_len += ft_prt(&format[i], look);
+			str_len += ft_prt(&format[i], (int)look);
 			ft_printf_chk(&format[i], ap, &str_len);
+			i = i + (int)look;
 		}
 		else
 		{
 			str_len += ft_prt(&format[i], ft_strlen(format) - i);
 			break ;
 		}
-		i++;
 	}
 	return (str_len);
 }

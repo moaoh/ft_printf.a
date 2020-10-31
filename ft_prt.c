@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_prt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/10/31 20:14:02 by junmkang         ###   ########.fr       */
+/*   Created: 2020/10/31 20:13:31 by junmkang          #+#    #+#             */
+/*   Updated: 2020/10/31 20:15:08 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef FT_PRINTF
-#	define FT_PRINTF
+#include "ft_printf.h"
 
-#	include <stdarg.h>
-#	include <stdlib.h>
-#	include <unistd.h>
+int				ft_prt(char *str, int len)
+{
+	write(1, str, len);
+	return (len);
+}
 
-#	define _ERROR -1
-
-int			ft_prt(char *str, int len);
-
-
-size_t		ft_strlen(const char *str);
-char		*ft_strchr(const char *s, int c);
-
-#	endif
+int				ft_special_prt()
