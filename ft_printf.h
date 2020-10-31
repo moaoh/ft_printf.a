@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/10/30 20:51:51 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/10/31 19:49:37 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@
 #	include <stdlib.h>
 #	include <unistd.h>
 
+#	define _ERROR -1
+
 size_t		ft_strlen(const char *str);
-char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strchr(const char *s, int c);
-
-int			ft_prt(char *str, int len);
-int			ft_printf_chk(const char *format, va_list ap);
-
-
 
 #	endif
