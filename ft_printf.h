@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/04 16:35:22 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/04 20:26:51 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ typedef struct	s_chk
 	int			width;
 	int			length;
 	int			f_point;
-	char		*type;
+	char		type;
 }				t_chk;
 
 #	define _ERROR -1
+
+int			ft_printf(const char *format, ...);
+int			ft_printf_format_type(char **format, va_list ap, int str_len);
+t_chk		*ft_printf_flag_chk(char **point, va_list ap);
 
 int			ft_prt(char *str, int len);
 

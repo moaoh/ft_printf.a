@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:27:33 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/04 16:40:28 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/04 20:24:33 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,19 @@
 
 // printf("a = %d, b = %d", a, b);
 
-int				ft_look_percent(char *format, char c)
+int				ft_percent(char **format)
 {
-	int		i;
+	char		*str;
+	int			len;
 
-	i = 0;
-	while (format[i])
+	len = 0;
+	str = *format;
+	while (**format != '%' && **format != '\0')
 	{
-		if (format[i] == c)
-			return (i);
-		i++;
+		len++;
+		(*format)++;
 	}
-	return (-1);
-}
-
-int				ft_answer(char *format, va_list ap)
-{
-	int		look;
-	int		str_len;
-	int		i;
-
-	str_len = 0;
-	while (format[i])
-	{
-		look = ft_look_percent(&format[i], '%');
-		if (look != -1)
-		{
-			str_len += ft_prt(&format[i], look);
-			ft_printf_format_type(&format[i], ap, &str_len);
-			i += look;
-		}
-		else
-		{
-			str_len += ft_prt(&format[i], ft_strlen(format) - i);
-			break ;
-		}
-	}
-	return (str_len);
+	return (write(1, str, len - 1));
 }
 
 int				ft_printf(const char *format, ...)
@@ -60,8 +36,12 @@ int				ft_printf(const char *format, ...)
 
 	str_len = 0;
 	va_start(ap, format);
-	if (!(str_len = ft_answer((char *)format, ap)))
-		return (_ERROR);
+	while (*format != '\0')
+	{
+		str_len += ft_percent(*format);
+		ft_printf_format_type(format, ap, str_len);
+		*format++;
+	}
 	return (str_len);
 }
 

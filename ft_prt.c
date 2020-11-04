@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 20:13:31 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/04 16:26:56 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/04 19:32:24 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int				ft_prt(char *str, int len)
+int				ft_prt(char **str, int len)
 {
 	write(1, str, len);
 	return (len);
