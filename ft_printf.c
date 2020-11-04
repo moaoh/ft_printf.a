@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:27:33 by junmkang          #+#    #+#             */
-/*   Updated: 2020/10/31 20:12:44 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/04 16:40:28 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,35 @@
 
 // printf("a = %d, b = %d", a, b);
 
-int				ft_answer(char *format, va_list ap)
+int				ft_look_percent(char *format, char c)
 {
-	char	*look;
-	int		str_len;
 	int		i;
 
 	i = 0;
+	while (format[i])
+	{
+		if (format[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+int				ft_answer(char *format, va_list ap)
+{
+	int		look;
+	int		str_len;
+	int		i;
+
 	str_len = 0;
 	while (format[i])
 	{
-		look = ft_strchr(&format[i], '%');
-		if (look)
+		look = ft_look_percent(&format[i], '%');
+		if (look != -1)
 		{
-			str_len += ft_prt(&format[i], (int)look);
-			ft_printf_chk(&format[i], ap, &str_len);
-			i = i + (int)look;
+			str_len += ft_prt(&format[i], look);
+			ft_printf_format_type(&format[i], ap, &str_len);
+			i += look;
 		}
 		else
 		{
