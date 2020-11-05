@@ -6,14 +6,15 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:18 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/05 19:50:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/05 20:26:56 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 // char
-int		ft_put_c(t_chk *s, va_list ap)
+// minus , zero , width
+int		ft_put_c(t_chk *s, va_list ap, int *str_len)
 {
 
 }

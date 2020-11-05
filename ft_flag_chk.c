@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_flag_chk.c                               :+:      :+:    :+:   */
+/*   ft_flag_chk.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/04 20:05:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/05 20:46:40 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_chk		*ft_chk_bzero(void)
 {
 	t_chk		*s;
 
-	if (!(s = malloc(sizeof(t_chk) * 1)))
+	if (!(s = (t_chk *)malloc(sizeof(t_chk) * 1)))
 		return (NULL);
 	s->f_minus = 0;
 	s->f_zero = 0;
@@ -91,7 +91,7 @@ void		ft_chk_type(char **point, t_chk *s)
 
 // printf("%-10.1d")
 // %[0, -][0 ~ 9 or *].[0 ~ 9 or *]d
-t_chk			*ft_printf_flag_chk(char **point, va_list ap)
+t_chk			*ft_flag_chk(char **point, va_list ap)
 {
 	t_chk		*s;
 

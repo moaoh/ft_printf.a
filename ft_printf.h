@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/05 19:53:49 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/05 20:39:54 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #	include <stdarg.h>
 #	include <stdlib.h>
 #	include <unistd.h>
+#	include <stdio.h>
 
 typedef struct	s_chk
 {
@@ -30,18 +31,14 @@ typedef struct	s_chk
 #	define _ERROR -1
 
 int			ft_printf(const char *format, ...);
-int			ft_printf_format_type(char **format, va_list ap, int *str_len);
-t_chk		*ft_printf_flag_chk(char **point, va_list ap);
+int			ft_format_type(char **format, va_list ap, int *str_len);
+t_chk		*ft_flag_chk(char **point, va_list ap);
 
-int			ft_prt(char *str, int len);
+int			ft_prt(char **str, int len);
 
 size_t		ft_strlen(const char *str);
 char		*ft_strchr(const char *s, int c);
 int			ft_atoi(const char *str);
-
-int			ft_put_c(t_chk *s, va_list ap);
-int			ft_put_d(t_chk *s, va_list ap);
-
 
 
 #	endif
