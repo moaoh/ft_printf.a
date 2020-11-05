@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_int.c                                    :+:      :+:    :+:   */
+/*   ft_put_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/10/28 13:09:45 by junmkang         ###   ########.fr       */
+/*   Created: 2020/10/28 12:59:19 by junmkang          #+#    #+#             */
+/*   Updated: 2020/11/05 19:52:07 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// int
-int		ft_printf_int(const char format, va_list ap)
+// unsigned int
+int		ft_put_u(t_chk *s, va_list ap)
 {
 
 }

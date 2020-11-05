@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:27:33 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/04 20:24:33 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/05 19:38:24 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,18 @@ int				ft_percent(char **format)
 int				ft_printf(const char *format, ...)
 {
 	va_list		ap;
+	char		**point;
 	int			str_len;
 
 	str_len = 0;
+
 	va_start(ap, format);
-	while (*format != '\0')
+	**point = &format;
+	while (**point != '\0')
 	{
-		str_len += ft_percent(*format);
-		ft_printf_format_type(format, ap, str_len);
-		*format++;
+		str_len += ft_percent(point);
+		ft_printf_format_type(point, ap, &str_len);
+		(*point)++;
 	}
 	return (str_len);
 }
