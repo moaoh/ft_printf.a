@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/05 20:39:54 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 14:59:35 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,13 @@ typedef struct	s_chk
 #	define _ERROR -1
 
 int			ft_printf(const char *format, ...);
-int			ft_format_type(char **format, va_list ap, int *str_len);
+int			ft_format_type(char **format, va_list ap);
 t_chk		*ft_flag_chk(char **point, va_list ap);
 
 int			ft_prt(char **str, int len);
 
 size_t		ft_strlen(const char *str);
 char		*ft_strchr(const char *s, int c);
-int			ft_atoi(const char *str);
-
+char		*ft_itoa(int n);
 
 #	endif

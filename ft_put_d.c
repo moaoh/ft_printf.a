@@ -6,13 +6,14 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/05 19:50:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 14:53:47 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 // int
+// 
 int		ft_put_d(t_chk *s, va_list ap)
 {
 

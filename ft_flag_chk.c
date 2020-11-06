@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/05 20:46:40 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 14:49:42 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void		ft_chk_flag(char **point, t_chk *s)
 void		ft_chk_width(char **point, t_chk *s, va_list ap)
 {
 	if (**point == '*')
+	{
 		s->width = va_arg(ap, int);
+		(*point)++;
+	}
 	else
 	{
 		while (('0' <= **point && **point <= '9'))
@@ -64,7 +67,10 @@ void		ft_chk_length(char **point, t_chk *s, va_list ap)
 	else
 		return ;
 	if (**point == '*')
+	{
 		s->length = va_arg(ap, int);
+		(*point)++;
+	}
 	else
 	{
 		while (('0' <= **point && **point <= '9'))
@@ -79,13 +85,16 @@ void		ft_chk_length(char **point, t_chk *s, va_list ap)
 void		ft_chk_type(char **point, t_chk *s)
 {
 	char		*str;
-	str = "cspdiuxX%";
 
+	str = "cspdiuxX%";
 	while(*str)
 	{
 		if (*str == **point)
+		{
 			s->type = *str;
-		(*str)++;
+			break;
+		}
+		str++;
 	}
 }
 
