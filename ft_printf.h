@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 14:59:35 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:01:09 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,30 @@ typedef struct	s_chk
 	int			f_minus;
 	int			f_zero;
 	int			width;
-	int			length;
 	int			f_point;
+	int			length;
 	char		type;
 }				t_chk;
 
 #	define _ERROR -1
 
+// main part
 int			ft_printf(const char *format, ...);
 int			ft_format_type(char **format, va_list ap);
 t_chk		*ft_flag_chk(char **point, va_list ap);
 
-int			ft_prt(char **str, int len);
-
-size_t		ft_strlen(const char *str);
-char		*ft_strchr(const char *s, int c);
+// utils
 char		*ft_itoa(int n);
+size_t		ft_strlen(const char *str);
+
+// type
+int			ft_put_c(t_chk *s, va_list ap);
+int			ft_put_d(t_chk *s, va_list ap);
+int			ft_put_u(t_chk *s, va_list ap);
+
+//printf_flag
+void		ft_width_print(int width, int len);
+
+
 
 #	endif

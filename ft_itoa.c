@@ -6,12 +6,33 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 14:55:52 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 14:57:04 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 16:58:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+char	*ft_strdup(const char *s)
+{
+	int		i;
+	int		len;
+	char	*str;
+
+	i = 0;
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+// int -> char
 static int		count(int n)
 {
 	int		len;
