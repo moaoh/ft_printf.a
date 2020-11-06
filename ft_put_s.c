@@ -1,41 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_c.c                                         :+:      :+:    :+:   */
+/*   ft_put_s.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 12:59:18 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 21:02:18 by junmkang         ###   ########.fr       */
+/*   Created: 2020/11/06 20:32:44 by junmkang          #+#    #+#             */
+/*   Updated: 2020/11/06 20:33:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// char
-// minus , zero , width
-int		ft_put_c(t_chk *s, va_list ap)
+int		ft_put_s(t_chk *s, va_list ap)
 {
-	char	c;
-	int		c_len;
-
-	if (s->type == 'c')
-		c = (char)va_arg(ap, int); // 97
-	else if (s->type == '%')
-		c = '%';
-	if (s->f_minus == 1)
-	{
-		write(1, &c, 1);
-		ft_width_print(s->width, 1);
-	}
-	else
-	{
-		ft_width_print(s->width, 1);
-		write(1, &c, 1);
-	}
-	if (s->width >= 1)
-		c_len = s->width - 1;
-	else
-		c_len = 1;
-	return (c_len);
 }

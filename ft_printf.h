@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 20:01:09 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 20:34:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ size_t		ft_strlen(const char *str);
 int			ft_put_c(t_chk *s, va_list ap);
 int			ft_put_d(t_chk *s, va_list ap);
 int			ft_put_u(t_chk *s, va_list ap);
+int			ft_put_s(t_chk *s, va_list ap);
 
 //printf_flag
 void		ft_width_print(int width, int len);

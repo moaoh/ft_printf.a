@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:40:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 20:06:31 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/06 21:01:19 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,20 @@ int		ft_format_type(char **point, va_list ap)
 	// printf("type = %c\n", s->type);
 	if (s->type == 'c')
 		str_len += ft_put_c(s, ap);
-	if (s->type == 's')
-	if (s->type == 'p')
-		str_len += ft_put_d(s, ap);
-	if (s->type == 'd')
-		str_len += ft_put_d(s, ap);
-	if (s->type == 'i')
-		str_len += ft_put_d(s, ap);
-	if (s->type == 'u')
-		str_len += ft_put_d(s, ap);
-	if (s->type == 'x')
-		str_len += ft_put_d(s, ap);
-	if (s->type == 'X')
-		str_len += ft_put_d(s, ap);
+	// if (s->type == 's')
+	// 	str_len += ft_put_s(s, ap);
+	// if (s->type == 'p')
+	// 	str_len += ft_put_d(s, ap);
+	// if (s->type == 'd')
+	// 	str_len += ft_put_d(s, ap);
+	// if (s->type == 'i')
+	// 	str_len += ft_put_d(s, ap);
+	// if (s->type == 'u')
+	// 	str_len += ft_put_d(s, ap);
+	// if (s->type == 'x')
+	// 	str_len += ft_put_d(s, ap);
+	// if (s->type == 'X')
+	// 	str_len += ft_put_d(s, ap);
 	if (s->type == '%')
 		str_len += ft_put_c(s, ap);
 	return (str_len);
