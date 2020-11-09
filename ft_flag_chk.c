@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 14:49:42 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 15:13:46 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_chk		*ft_chk_bzero(void)
 	s->f_minus = 0;
 	s->f_zero = 0;
 	s->width = 0;
-	s->length = 0;
+	s->precision = 0;
 	s->f_point = 0;
 	s->type = '\0';
 	return (s);
@@ -57,7 +57,7 @@ void		ft_chk_width(char **point, t_chk *s, va_list ap)
 	}
 }
 
-void		ft_chk_length(char **point, t_chk *s, va_list ap)
+void		ft_chk_precision(char **point, t_chk *s, va_list ap)
 {
 	if (**point == '.')
 	{
@@ -68,15 +68,15 @@ void		ft_chk_length(char **point, t_chk *s, va_list ap)
 		return ;
 	if (**point == '*')
 	{
-		s->length = va_arg(ap, int);
+		s->precision = va_arg(ap, int);
 		(*point)++;
 	}
 	else
 	{
 		while (('0' <= **point && **point <= '9'))
 		{
-			s->length *= 10;
-			s->length = s->length + (**point - '0');
+			s->precision *= 10;
+			s->precision = s->precision + (**point - '0');
 			(*point)++;
 		}
 	}
@@ -109,7 +109,7 @@ t_chk			*ft_flag_chk(char **point, va_list ap)
 		return (NULL);
 	ft_chk_flag(point, s);
 	ft_chk_width(point, s, ap);
-	ft_chk_length(point, s, ap);
+	ft_chk_precision(point, s, ap);
 	ft_chk_type(point, s);
 
 	return (s);

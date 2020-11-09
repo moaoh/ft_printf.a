@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:18 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 21:02:18 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 15:07:11 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_put_c(t_chk *s, va_list ap)
 		c = (char)va_arg(ap, int); // 97
 	else if (s->type == '%')
 		c = '%';
-	if (s->f_minus == 1)
+	if (s->f_minus == 1) // '-'
 	{
 		write(1, &c, 1);
 		ft_width_print(s->width, 1);
