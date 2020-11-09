@@ -2,13 +2,13 @@
 
 int		main(void)
 {
-	char	*f = "%-10.1d";
+	char	*f = "%u";
 	char	*s = "";
 	int		printf_len;
 	int		ft_printf_len;
-	int		a = 0;
+	int		a =	-320;
 
-	printf("%s", f);
+	printf("format = %s , %d", f, a);
 	printf("\n------------------------\n");
 	printf("printf : \n");
 	printf_len = printf(f, a);

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 18:49:58 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:47:22 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,5 @@ int		ft_put_d(t_chk *s, va_list ap)
 	else
 		len = ft_d_size(d);
 	d_len += ft_precision_minus(d, s, len, d_minus);
-	// printf("\nd_len = %d\n", d_len);
 	return (d_len);
 }

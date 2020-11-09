@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:40:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 16:57:04 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 19:48:39 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int		ft_format_type(char **point, va_list ap)
 	// 	str_len += ft_put_d(s, ap);
 	if (s->type == 'd')
 		str_len += ft_put_d(s, ap);
-	// if (s->type == 'i')
-	// 	str_len += ft_put_d(s, ap);
-	// if (s->type == 'u')
-	// 	str_len += ft_put_d(s, ap);
+	if (s->type == 'i')
+		str_len += ft_put_d(s, ap);
+	if (s->type == 'u')
+		str_len += ft_put_u(s, ap);
 	// if (s->type == 'x')
 	// 	str_len += ft_put_d(s, ap);
 	// if (s->type == 'X')

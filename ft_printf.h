@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 18:15:34 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:01:44 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			ft_format_type(char **format, va_list ap);
 t_chk		*ft_flag_chk(char **point, va_list ap);
 
 // utils
-char		*ft_itoa(int n);
+char		*ft_itoa(long long n);
 size_t		ft_strlen(const char *str);
 
 // type
@@ -47,6 +47,7 @@ int			ft_put_s(t_chk *s, va_list ap);
 
 //printf_flag
 int			ft_prt_int(long long d);
+int			ft_prt_uint(unsigned int d);
 int			ft_width_print(int width, int len);
 int			ft_precision_print(int	precision, int len);
 

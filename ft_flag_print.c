@@ -6,17 +6,26 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:56:49 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 18:45:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:01:34 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int		ft_prt_uint(unsigned int d)
+{
+	char	*str;
+
+	str = ft_itoa((long long)d);
+	write(1, str, ft_strlen(str));
+	return (ft_strlen(str));
+}
+
 int		ft_prt_int(long long d)
 {
 	char	*str;
 
-	str = ft_itoa((int)d);
+	str = ft_itoa((long long)d);
 	write(1, str, ft_strlen(str));
 	return (ft_strlen(str));
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 14:55:52 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 16:58:15 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:07:23 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strdup(const char *s)
 }
 
 // int -> char
-static int		count(int n)
+static int		count(long long n)
 {
 	int		len;
 
@@ -48,15 +48,7 @@ static int		count(int n)
 	return (len);
 }
 
-static char		*chk(int n)
-{
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	else
-		return (ft_strdup("0"));
-}
-
-static void		ft_print(char *str, int n, int len)
+static void		ft_print(char *str, long long n, int len)
 {
 	if (n < 0)
 	{
@@ -71,18 +63,19 @@ static void		ft_print(char *str, int n, int len)
 	}
 }
 
-char			*ft_itoa(int n)
+char			*ft_itoa(long long n)
 {
 	char	*str;
 	int		len;
 
-	if (n == -2147483648 || n == 0)
-		return (chk(n));
+	if (n == 0)
+		return (ft_strdup("0"));
 	len = count(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
 	str[len] = '\0';
 	ft_print(str, n, len - 1);
+
 	return (str);
 }
