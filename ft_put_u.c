@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:19 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 19:57:49 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:50:28 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int		ft_put_u(t_chk *s, va_list ap)
 	d_minus = 0;
 	d_len = 0;
 	d = (unsigned int)va_arg(ap, int);
-	if (d == 0)
+	if (d == 0 && s->precision != 0)
 		len = 1;
 	else
 		len = ft_d_size(d);

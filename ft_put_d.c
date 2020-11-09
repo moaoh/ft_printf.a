@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 19:47:22 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 20:48:14 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ static int		ft_int_print(long long d, t_chk *s, int len, int d_minus)
 	if (d_minus == 1) // - 출력
 		write(1, "-", 1);
 	d_len += ft_precision_print(s->precision, len);
-	d_len += ft_prt_int(d);
+	if (d != 0)
+		d_len += ft_prt_int(d);
 	return (d_len);
 }
 
@@ -65,7 +66,6 @@ static int		ft_precision_minus(long long d, t_chk *s, int len, int d_minus)
 		d_len += ft_int_print(d, s, len , d_minus);
 		d_len += ft_width_print(s->width, long_len);
 	}
-	// printf("\nd_len = %d\n", d_len);
 	return (d_len);
 }
 int		ft_put_d(t_chk *s, va_list ap)
@@ -79,10 +79,11 @@ int		ft_put_d(t_chk *s, va_list ap)
 	d_len = 0;
 	d = (long long)va_arg(ap, int);
 	d_len += ft_minus(&d, &d_minus); // 음수인지 양수인지 판별
-	if (d == 0)
+	if (d == 0 && s->precision != 0)
 		len = 1;
 	else
 		len = ft_d_size(d);
+	len += d_minus;
 	d_len += ft_precision_minus(d, s, len, d_minus);
 	return (d_len);
 }

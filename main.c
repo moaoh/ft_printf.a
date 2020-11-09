@@ -1,12 +1,15 @@
 #include "ft_printf.h"
 
+
+// %0-10.0d"
+// "%10.d"
 int		main(void)
 {
-	char	*f = "%u";
+	char	*f = "%10.u";
 	char	*s = "";
 	int		printf_len;
 	int		ft_printf_len;
-	int		a =	-320;
+	int		a =	123;
 
 	printf("format = %s , %d", f, a);
 	printf("\n------------------------\n");
