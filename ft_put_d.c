@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 20:48:14 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:11:15 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int		ft_minus(long long *d, int *d_minus)
 
 static int		ft_d_size(long long d)
 {
-	int		count;
+	int				count;
 
 	count = 0;
 	while (d >= 1)
@@ -38,7 +38,7 @@ static int		ft_d_size(long long d)
 
 static int		ft_int_print(long long d, t_chk *s, int len, int d_minus)
 {
-	int		d_len;
+	int				d_len;
 
 	d_len = 0;
 	if (d_minus == 1) // - 출력
@@ -51,8 +51,8 @@ static int		ft_int_print(long long d, t_chk *s, int len, int d_minus)
 
 static int		ft_precision_minus(long long d, t_chk *s, int len, int d_minus)
 {
-	int		long_len;
-	int		d_len;
+	int				long_len;
+	int				d_len;
 
 	d_len = 0;
 	long_len = (len >= s->precision) ? len : s->precision;

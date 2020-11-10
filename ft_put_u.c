@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:19 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 20:50:28 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/09 21:11:38 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // unsigned int
 static int		ft_d_size(unsigned int d)
 {
-	int		count;
+	int				count;
 
 	count = 0;
 	while (d >= 1)
@@ -28,7 +28,8 @@ static int		ft_d_size(unsigned int d)
 
 static int		ft_int_print(unsigned int d, t_chk *s, int len)
 {
-	int		d_len;
+	int				d_len;
+
 	d_len = 0;
 	d_len += ft_precision_print(s->precision, len);
 	d_len += ft_prt_uint(d);
@@ -37,8 +38,8 @@ static int		ft_int_print(unsigned int d, t_chk *s, int len)
 
 static int		ft_precision_minus(unsigned int d, t_chk *s, int len)
 {
-	int		long_len;
-	int		d_len;
+	int				long_len;
+	int				d_len;
 
 	d_len = 0;
 	long_len = (len >= s->precision) ? len : s->precision;
@@ -56,7 +57,7 @@ static int		ft_precision_minus(unsigned int d, t_chk *s, int len)
 }
 int		ft_put_u(t_chk *s, va_list ap)
 {
-	unsigned int		d;
+	unsigned int	d;
 	int				len;
 	int				d_len; // 최종 길이.
 	int				d_minus;

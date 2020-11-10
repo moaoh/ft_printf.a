@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:40:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 19:48:39 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 14:00:33 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int		ft_format_type(char **point, va_list ap)
 	// printf("type = %c\n", s->type);
 	if (s->type == 'c')
 		str_len += ft_put_c(s, ap);
-	// if (s->type == 's')
-	// 	str_len += ft_put_s(s, ap);
+	if (s->type == 's')
+		str_len += ft_put_s(s, ap);
 	// if (s->type == 'p')
 	// 	str_len += ft_put_d(s, ap);
 	if (s->type == 'd')
