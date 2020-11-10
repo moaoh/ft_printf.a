@@ -5,21 +5,21 @@
 // "%10.d"
 int		main(void)
 {
-	char	*f = "%0-10c";
+	char	*f = "%-10.3X";
 	char	c = 'c';
 	int		printf_len;
 	int		ft_printf_len;
-	int		a =	-123;
+	int		a =	10;
 
-	printf("format = %s , %c", f, c);
+	printf("format = %s , %d", f, a);
 	printf("\n------------------------\n");
 	printf("printf : \n");
-	printf_len = printf(f, c);
+	printf_len = printf(f, a);
 	printf("%%\n\n");
 	printf("printf_len = %d\n", printf_len);
 	printf("\n------------------------\n");
 	printf("ft_printf : \n");
-	ft_printf_len = ft_printf(f, c);
+	ft_printf_len = ft_printf(f, a);
 	printf("%%\n\n");
 	printf("ft_printf_len = %d\n", ft_printf_len);
 

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 14:55:52 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 20:07:23 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 17:56:39 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	len = ft_strlen(s);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
+	if (!(str = (char *)malloc(len + 1)))
 		return (0);
 	while (s[i])
 	{

@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_put_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/27 14:45:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 17:44:14 by junmkang         ###   ########.fr       */
+/*   Created: 2020/11/10 14:32:27 by junmkang          #+#    #+#             */
+/*   Updated: 2020/11/10 17:01:53 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		ft_strlen(const char *str)
+// d와 같음.
+// x 와 같고 long long 으로 받아야함
+int			ft_put_p(t_chk *s, va_list ap)
 {
-	size_t	count;
-
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
-
-void	ft_bzero(void *ptr, size_t size)
-{
-	unsigned char	*s;
-	size_t			i;
-
-	s = (unsigned char *)ptr;
-	i = 0;
-	while (i < size)
-	{
-		s[i] = 0;
-		i++;
-	}
 }

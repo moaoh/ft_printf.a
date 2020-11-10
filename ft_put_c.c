@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:18 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 14:28:02 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 14:29:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_put_c(t_chk *s, va_list ap)
 		c = '%';
 	if (s->f_minus == 1) // '-'
 	{
+		// zero 와 minus가 같이 들어온 경우에는 zero는 무시.
 		write(1, &c, 1);
 		c_len += ft_width_print(s->width, 1);
 	}

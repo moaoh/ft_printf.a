@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 21:11:15 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 15:04:24 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		ft_minus(long long *d, int *d_minus)
 	return (0);
 }
 
-static int		ft_d_size(long long d)
+int				ft_d_size(long long d)
 {
 	int				count;
 

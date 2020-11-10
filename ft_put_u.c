@@ -6,14 +6,14 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:19 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 21:11:38 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 19:21:43 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 // unsigned int
-static int		ft_d_size(unsigned int d)
+static int		ft_ud_size(unsigned int d)
 {
 	int				count;
 
@@ -55,7 +55,8 @@ static int		ft_precision_minus(unsigned int d, t_chk *s, int len)
 	}
 	return (d_len);
 }
-int		ft_put_u(t_chk *s, va_list ap)
+
+int				ft_put_u(t_chk *s, va_list ap)
 {
 	unsigned int	d;
 	int				len;
@@ -68,7 +69,7 @@ int		ft_put_u(t_chk *s, va_list ap)
 	if (d == 0 && s->precision != 0)
 		len = 1;
 	else
-		len = ft_d_size(d);
+		len = ft_ud_size(d);
 	d_len += ft_precision_minus(d, s, len);
 	return (d_len);
 }
