@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 15:04:24 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 21:21:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ static int		ft_int_print(long long d, t_chk *s, int len, int d_minus)
 	if (d_minus == 1) // - 출력
 		write(1, "-", 1);
 	d_len += ft_precision_print(s->precision, len);
-	if (d != 0)
-		d_len += ft_prt_int(d);
+	d_len += ft_prt_int(d);
 	return (d_len);
 }
 
