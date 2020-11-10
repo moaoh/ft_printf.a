@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:31:40 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 19:56:07 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:02:50 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static char		*ft_change(unsigned int temp, int len)
 	int		m;
 
 	str = (char *)malloc(len + 1);
+	if (!str)
+		return (-1);
 	str[len--] = '\0';
 	main = "0123456789ABCDEF";
 	while (len >= 0)
