@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:54:42 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 20:02:33 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:22:01 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,10 @@ static char		*ft_change(long long temp, int len)
 {
 	char	*main;
 	char	*str;
-	int		i;
-	int		m;
 
 	str = (char *)malloc(len + 1);
 	if (!str)
-		return (-1);
+		return (NULL);
 	str[len--] = '\0';
 	main = "0123456789abcdef";
 	while (len >= 0)
@@ -83,7 +81,7 @@ static int		ft_precision_minus(char *x, t_chk *s, int len)
 
 int				ft_put_p(t_chk *s, va_list ap)
 {
-	long long		temp;
+	long long			temp;
 	int					x_len;
 	int					x_minus;
 	int					len;
@@ -96,7 +94,8 @@ int				ft_put_p(t_chk *s, va_list ap)
 		len = 1;
 	else
 		len = ft_x_size(temp);
-	x = ft_change(temp, len);
+	if (!(x = ft_change(temp, len)))
+		return (_ERROR);
 	x_len += ft_precision_minus(x, s, len);
 
 	return (x_len);

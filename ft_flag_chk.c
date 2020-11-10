@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/09 15:13:46 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 20:06:19 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,17 @@ void		ft_chk_type(char **point, t_chk *s)
 	char		*str;
 
 	str = "cspdiuxX%";
-	while(*str)
+	while (*str)
 	{
 		if (*str == **point)
 		{
 			s->type = *str;
-			break;
+			break ;
 		}
 		str++;
 	}
 }
 
-// printf("%-10.1d")
-// %[0, -][0 ~ 9 or *].[0 ~ 9 or *]d
 t_chk			*ft_flag_chk(char **point, va_list ap)
 {
 	t_chk		*s;
