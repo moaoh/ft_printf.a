@@ -5,7 +5,7 @@
 // "%10.d"
 int		main(void)
 {
-	char	*f = "%-10.3X";
+	char	*f = "%-20.5p";
 	char	c = 'c';
 	int		printf_len;
 	int		ft_printf_len;

@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:31:40 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 19:49:07 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/10 19:56:07 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int		ft_x_size(long long x)
+static int		ft_x_size(unsigned int x)
 {
 	int				count;
 
@@ -26,7 +26,7 @@ static int		ft_x_size(long long x)
 }
 
 // 16진수 변환 출력
-static char		*ft_change(long long temp, int len)
+static char		*ft_change(unsigned int temp, int len)
 {
 	char	*main;
 	char	*str;
@@ -79,7 +79,7 @@ static int		ft_precision_minus(char *x, t_chk *s, int len)
 // d 와 같음
 int			ft_put_xlarge(t_chk *s, va_list ap)
 {
-	long long			temp;
+	unsigned int		temp;
 	int					x_len;
 	int					x_minus;
 	int					len;
@@ -87,7 +87,7 @@ int			ft_put_xlarge(t_chk *s, va_list ap)
 
 	x_minus = 0;
 	x_len = 0;
-	temp = va_arg(ap, long long);
+	temp = va_arg(ap, unsigned int);
 	if (temp == 0 && s->precision != 0)
 		len = 1;
 	else
