@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:40:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 19:57:41 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 15:29:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_format_type(char **point, va_list ap)
 	// printf("\nminus = %d\n", s->f_minus);
 	// printf("f_zero = %d\n", s->f_zero);
 	// printf("width = %d\n", s->width);
-	// printf("length = %d\n", s->length);
+	// printf("precision = %d\n", s->precision);
 	// printf("f_point = %d\n", s->f_point);
 	// printf("type = %c\n", s->type);
 	// 이후 type에 따라서 값을 들어가서 출력 ( cspdiuxX% )

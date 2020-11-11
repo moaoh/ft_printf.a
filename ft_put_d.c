@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 21:21:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:35:14 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ static int		ft_int_print(long long d, t_chk *s, int len, int d_minus)
 	int				d_len;
 
 	d_len = 0;
-	if (d_minus == 1) // - 출력
+	if (d_minus == 1)
 		write(1, "-", 1);
 	d_len += ft_precision_print(s->precision, len);
-	d_len += ft_prt_int(d);
+	if (!(d == 0 && s->precision == 0 && s->f_point))
+		d_len += ft_prt_int(d);
+	// printf("%d", d_len);
 	return (d_len);
 }
 
@@ -55,15 +57,27 @@ static int		ft_precision_minus(long long d, t_chk *s, int len, int d_minus)
 
 	d_len = 0;
 	long_len = (len >= s->precision) ? len : s->precision;
-	if (s->f_minus == 0) // zero에 길이는 len - width 값.
+	if (d_minus == 1)
+		long_len++;
+	if (s->f_minus == 1) // zero에 길이는 len - width 값.
 	{
-		d_len += ft_width_print(s->width, long_len);
 		d_len += ft_int_print(d, s, len , d_minus);
+		d_len += ft_width_print(s->width, long_len);
 	}
 	else
 	{
+		if (s->f_zero == 1 && s->precision == 0)
+		{
+			if (d_minus == 1)
+			{
+				write(1, "-", 1);
+				d_minus = -1;
+			}
+			d_len += ft_precision_print(s->width, long_len);
+		}
+		else
+			d_len += ft_width_print(s->width, long_len);
 		d_len += ft_int_print(d, s, len , d_minus);
-		d_len += ft_width_print(s->width, long_len);
 	}
 	return (d_len);
 }
@@ -76,13 +90,18 @@ int		ft_put_d(t_chk *s, va_list ap)
 
 	d_minus = 0;
 	d_len = 0;
+	len = 0;
 	d = (long long)va_arg(ap, int);
 	d_len += ft_minus(&d, &d_minus); // 음수인지 양수인지 판별
-	if (d == 0 && s->precision != 0)
+	if (d == 0)
+	{
 		len = 1;
+		if (s->f_point == 1 && s -> precision == 0)
+			len = 0;
+	}
+
 	else
 		len = ft_d_size(d);
-	len += d_minus;
 	d_len += ft_precision_minus(d, s, len, d_minus);
 	return (d_len);
 }

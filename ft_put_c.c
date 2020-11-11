@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:18 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 21:14:52 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 15:54:16 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_put_c(t_chk *s, va_list ap)
 		c_len += ft_width_print(s->width, 1);
 	}
 	else
-	{	if (s->f_zero == 0)
+	{	if (s->f_zero == 0 && s->width != 0)
 			c_len += ft_width_print(s->width, 1);
 		else
 			c_len += ft_precision_print(s->width, 1);
