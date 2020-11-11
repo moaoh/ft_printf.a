@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 17:44:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:48:14 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,9 @@ int			ft_prt_int(long long d);
 int			ft_prt_uint(unsigned int d);
 int			ft_width_print(int width, int len);
 int			ft_precision_print(int	precision, int len);
+
+//ft_type_size
 int			ft_d_size(long long d);
-
-
+int			ft_x_size(unsigned int x);
 
 #	endif

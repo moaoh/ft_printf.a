@@ -6,26 +6,11 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:54:42 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 20:22:01 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:49:26 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// d 와 같음
-
-static int		ft_x_size(long long x)
-{
-	int				count;
-
-	count = 0;
-	while (x >= 1)
-	{
-		x /= 16;
-		count++;
-	}
-	return (count);
-}
 
 // 16진수 변환 출력
 static char		*ft_change(long long temp, int len)

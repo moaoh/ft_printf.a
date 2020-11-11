@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:56:49 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 17:07:01 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 17:47:36 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int		ft_precision_print(int	precision, int len)
 {
 	int		precision_len;
 
-	precision_len = precision - len; // 총 길이.
+	precision_len = precision - len;
 	if (precision_len < 0)
 		precision_len = 0;
 	if (precision > 0)

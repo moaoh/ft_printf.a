@@ -13,7 +13,7 @@
 NAME = libftprintf.a
 
 SRC = ft_printf.c ft_flag_chk.c ft_flag_print.c ft_format_type.c ft_itoa.c ft_printf_utils.c \
-		ft_put_c.c ft_put_d.c ft_put_p.c ft_put_s.c ft_put_u.c ft_put_x.c ft_put_xlarge.c
+		ft_put_c.c ft_put_d.c ft_put_p.c ft_put_s.c ft_put_u.c ft_put_x.c ft_put_xlarge.c ft_type_size.c
 
 CC = gcc
 RM = rm -rf
