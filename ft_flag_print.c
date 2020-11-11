@@ -6,13 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:56:49 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 17:47:36 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 20:58:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_prt_uint(unsigned int d)
+int			ft_prt_uint(unsigned int d)
 {
 	char	*str;
 
@@ -21,7 +21,7 @@ int		ft_prt_uint(unsigned int d)
 	return (ft_strlen(str));
 }
 
-int		ft_prt_int(long long d)
+int			ft_prt_int(long long d)
 {
 	char	*str;
 
@@ -30,7 +30,7 @@ int		ft_prt_int(long long d)
 	return (ft_strlen(str));
 }
 
-int		ft_width_print(int width, int len)
+int			ft_width_print(int width, int len)
 {
 	int		width_len;
 
@@ -48,7 +48,7 @@ int		ft_width_print(int width, int len)
 	return (width_len);
 }
 
-int		ft_precision_print(int	precision, int len)
+int			ft_precision_print(int	precision, int len)
 {
 	int		precision_len;
 
@@ -64,4 +64,19 @@ int		ft_precision_print(int	precision, int len)
 		}
 	}
 	return (precision_len);
+}
+
+t_chk		*ft_chk_bzero(void)
+{
+	t_chk	*s;
+
+	if (!(s = (t_chk *)malloc(sizeof(t_chk) * 1)))
+		return (NULL);
+	s->f_minus = 0;
+	s->f_zero = 0;
+	s->width = 0;
+	s->precision = 0;
+	s->f_point = 0;
+	s->type = '\0';
+	return (s);
 }

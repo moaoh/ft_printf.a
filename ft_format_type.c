@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:40:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 15:29:45 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:11:52 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ft_format_type(char **point, va_list ap)
 	// printf("type = %c\n", s->type);
 	// 이후 type에 따라서 값을 들어가서 출력 ( cspdiuxX% )
 
-	// printf("type = %c\n", s->type);
 	if (s->type == 'c')
 		str_len += ft_put_c(s, ap);
 	if (s->type == 's')
@@ -47,5 +46,8 @@ int		ft_format_type(char **point, va_list ap)
 		str_len += ft_put_xlarge(s, ap);
 	if (s->type == '%')
 		str_len += ft_put_c(s, ap);
+	if (s->type == '\0')
+		return (0);
+
 	return (str_len);
 }

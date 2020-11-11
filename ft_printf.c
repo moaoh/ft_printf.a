@@ -6,13 +6,11 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:27:33 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/06 19:13:53 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 19:21:04 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-// printf("a = %d, b = %d", a, b);
 
 int				ft_percent(char **point)
 {
@@ -42,10 +40,9 @@ int				ft_printf(const char *format, ...)
 	{
 		str_len += ft_percent(point);
 		if (**point == '\0')
-			break;
+			break ;
 		str_len += ft_format_type(point, ap);
 		(*point)++;
 	}
 	return (str_len);
 }
-

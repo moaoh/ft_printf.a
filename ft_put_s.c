@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 20:32:44 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 20:39:35 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:07:40 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int		ft_precision_s(int precision, int len)
 	int		precision_len;
 
 	precision_len = precision - len;
-	if (precision_len < 0)
-		len = precision;
 	if (precision > 0)
 	{
 		while (precision - len > 0)
@@ -30,6 +28,8 @@ int		ft_precision_s(int precision, int len)
 			precision--;
 		}
 	}
+	if (precision_len < 0)
+		precision_len = 0;
 	return (precision_len);
 }
 
@@ -39,8 +39,17 @@ int		ft_put_s(t_chk *s, va_list ap)
 	int		s_len;
 	int		num;
 
+	num = 0;
 	str = va_arg(ap, char*);
-	s_len = ft_strlen(str);
+	if (str == NULL)
+	{
+		str = "(null)";
+		s_len = 6;
+	}
+	else
+		s_len = ft_strlen(str);
+	if (s->f_point == 1 && s->precision < s_len)
+		s_len = (s->precision < 0) ? s_len : s->precision;
 	if (s->f_minus == 1) // '-'
 	{
 		write(1, str, s_len);

@@ -9,11 +9,16 @@ width
 */
 int		main(void)
 {
-	int d = 0;
-	char *s = "%5.0d";
-	printf(s, d);
-	printf("%%\n");
-	ft_printf(s, d);
+	int d = 10;
+	int one_len = 0;
+	int	two_len = 0;
+	char *s = "%00s";
+	char *c = "hi low";
+	// one_len = printf("%-05");
+	// printf("%%\n");
+	two_len = ft_printf("%-05");
+	// printf("%%\n");
+	// printf("%d, %d", one_len, two_len);
 
 	return (0);
 }

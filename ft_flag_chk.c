@@ -6,28 +6,13 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 20:06:19 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 20:47:20 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_chk		*ft_chk_bzero(void)
-{
-	t_chk		*s;
-
-	if (!(s = (t_chk *)malloc(sizeof(t_chk) * 1)))
-		return (NULL);
-	s->f_minus = 0;
-	s->f_zero = 0;
-	s->width = 0;
-	s->precision = 0;
-	s->f_point = 0;
-	s->type = '\0';
-	return (s);
-}
-
-void		ft_chk_flag(char **point, t_chk *s)
+static void		ft_chk_flag(char **point, t_chk *s)
 {
 	while ((**point == '-' || **point == '0'))
 	{
@@ -39,7 +24,7 @@ void		ft_chk_flag(char **point, t_chk *s)
 	}
 }
 
-void		ft_chk_width(char **point, t_chk *s, va_list ap)
+static void		ft_chk_width(char **point, t_chk *s, va_list ap)
 {
 	if (**point == '*')
 	{
@@ -55,9 +40,14 @@ void		ft_chk_width(char **point, t_chk *s, va_list ap)
 			(*point)++;
 		}
 	}
+	if (s->width < 0)
+	{
+		s->width *= -1;
+		s->f_minus = 1;
+	}
 }
 
-void		ft_chk_precision(char **point, t_chk *s, va_list ap)
+static void		ft_chk_precision(char **point, t_chk *s, va_list ap)
 {
 	if (**point == '.')
 	{
@@ -82,7 +72,7 @@ void		ft_chk_precision(char **point, t_chk *s, va_list ap)
 	}
 }
 
-void		ft_chk_type(char **point, t_chk *s)
+static void		ft_chk_type(char **point, t_chk *s)
 {
 	char		*str;
 

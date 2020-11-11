@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:54:42 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 17:49:26 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 19:52:00 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,56 +32,63 @@ static char		*ft_change(long long temp, int len)
 	return (str);
 }
 
-static int		ft_x_print(char *x, t_chk *s, int len)
+static int		ft_p_print(char *p, t_chk *s, int len)
 {
-	int				x_len;
+	int				p_len;
 
-	x_len = 0;
+	p_len = 0;
 	write(1, "0x", 2);
-	x_len += ft_precision_print(s->precision, len);
-	write(1, x, ft_strlen(x));
-	x_len += ft_strlen(x) + 2;
-	return (x_len);
+	p_len += ft_precision_print(s->precision, len);
+	write(1, p, ft_strlen(p));
+	p_len += ft_strlen(p) + 2;
+	return (p_len);
 }
 
-static int		ft_precision_minus(char *x, t_chk *s, int len)
+static int		ft_precision_minus(char *p, t_chk *s, int len)
 {
 	int				long_len;
-	int				x_len;
+	int				p_len;
 
-	x_len = 0;
+	p_len = 0;
 	long_len = (len >= s->precision) ? len : s->precision;
-	if (s->f_minus == 0) // zero에 길이는 len - width 값.
+	if (s->f_minus == 1) // zero에 길이는 len - width 값.
 	{
-		x_len += ft_width_print(s->width, long_len + 2);
-		x_len += ft_x_print(x, s, len);
+		p_len += ft_p_print(p, s, len);
+		p_len += ft_width_print(s->width, long_len + 2);
 	}
 	else
 	{
-		x_len += ft_x_print(x, s, len);
-		x_len += ft_width_print(s->width, long_len + 2);
+		if (s->f_zero == 1 && s->precision == 0)
+			p_len += ft_precision_print(s->width, long_len + 2);
+		else
+			p_len += ft_width_print(s->width, long_len + 2);
+		p_len += ft_p_print(p, s, len);
 	}
-	return (x_len);
+	return (p_len);
 }
 
 int				ft_put_p(t_chk *s, va_list ap)
 {
 	long long			temp;
-	int					x_len;
-	int					x_minus;
+	int					p_len;
+	int					p_minus;
 	int					len;
-	char				*x;
+	char				*p;
 
-	x_minus = 0;
-	x_len = 0;
+	p_minus = 0;
+	p_len = 0;
 	temp = va_arg(ap, long long);
-	if (temp == 0 && s->precision != 0)
+	if (temp == 0)
+	{
 		len = 1;
+		if (s->f_point == 1 && s->precision == 0)
+			len = 0;
+	}
 	else
-		len = ft_x_size(temp);
-	if (!(x = ft_change(temp, len)))
+		len = ft_p_size(temp);
+	if (!(p = ft_change(temp, len)))
 		return (_ERROR);
-	x_len += ft_precision_minus(x, s, len);
+	p_len += ft_precision_minus(p, s, len);
 
-	return (x_len);
+	return (p_len);
 }
