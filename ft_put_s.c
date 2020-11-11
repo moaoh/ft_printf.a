@@ -6,18 +6,27 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 20:32:44 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 21:07:40 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:44:08 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// char *
-// width, minus, zero
-
-int		ft_precision_s(int precision, int len)
+static char		*ft_str_len(char *str, int *s_len)
 {
-	int		precision_len;
+	if (str == NULL)
+	{
+		str = "(null)";
+		*s_len = 6;
+	}
+	else
+		*s_len = ft_strlen(str);
+	return (str);
+}
+
+static int		ft_precision_s(int precision, int len)
+{
+	int			precision_len;
 
 	precision_len = precision - len;
 	if (precision > 0)
@@ -33,24 +42,18 @@ int		ft_precision_s(int precision, int len)
 	return (precision_len);
 }
 
-int		ft_put_s(t_chk *s, va_list ap)
+int				ft_put_s(t_chk *s, va_list ap)
 {
-	char	*str;
-	int		s_len;
-	int		num;
+	char		*str;
+	int			s_len;
+	int			num;
 
 	num = 0;
 	str = va_arg(ap, char*);
-	if (str == NULL)
-	{
-		str = "(null)";
-		s_len = 6;
-	}
-	else
-		s_len = ft_strlen(str);
+	str = ft_str_len(str, &s_len);
 	if (s->f_point == 1 && s->precision < s_len)
 		s_len = (s->precision < 0) ? s_len : s->precision;
-	if (s->f_minus == 1) // '-'
+	if (s->f_minus == 1)
 	{
 		write(1, str, s_len);
 		s_len += ft_width_print(s->width, s_len);
@@ -64,6 +67,5 @@ int		ft_put_s(t_chk *s, va_list ap)
 			s_len += ft_precision_s(s->width, s_len);
 		write(1, str, num);
 	}
-
 	return (s_len);
 }

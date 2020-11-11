@@ -6,13 +6,12 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:54:42 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 19:52:00 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:21:58 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// 16진수 변환 출력
 static char		*ft_change(long long temp, int len)
 {
 	char	*main;
@@ -51,7 +50,7 @@ static int		ft_precision_minus(char *p, t_chk *s, int len)
 
 	p_len = 0;
 	long_len = (len >= s->precision) ? len : s->precision;
-	if (s->f_minus == 1) // zero에 길이는 len - width 값.
+	if (s->f_minus == 1)
 	{
 		p_len += ft_p_print(p, s, len);
 		p_len += ft_width_print(s->width, long_len + 2);
@@ -89,6 +88,5 @@ int				ft_put_p(t_chk *s, va_list ap)
 	if (!(p = ft_change(temp, len)))
 		return (_ERROR);
 	p_len += ft_precision_minus(p, s, len);
-
 	return (p_len);
 }

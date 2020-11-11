@@ -14,9 +14,9 @@ int		main(void)
 	int	two_len = 0;
 	char *s = "%00s";
 	char *c = "hi low";
-	// one_len = printf("%-05");
+	one_len = printf("%-05");
 	// printf("%%\n");
-	two_len = ft_printf("%-05");
+	// two_len = ft_printf("%-05");
 	// printf("%%\n");
 	// printf("%d, %d", one_len, two_len);
 

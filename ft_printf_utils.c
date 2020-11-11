@@ -6,25 +6,23 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:45:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 20:19:36 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:17:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		ft_strlen(const char *str)
+size_t				ft_strlen(const char *str)
 {
-	size_t	count;
+	size_t			count;
 
-	// if (str == NULL)
-	// 	return (0);
 	count = 0;
 	while (str[count])
 		count++;
 	return (count);
 }
 
-void	ft_bzero(void *ptr, size_t size)
+void				ft_bzero(void *ptr, size_t size)
 {
 	unsigned char	*s;
 	size_t			i;

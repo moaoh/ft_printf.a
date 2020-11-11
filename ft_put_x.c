@@ -6,17 +6,16 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:30:46 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 19:52:18 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:21:32 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// 16진수 변환 출력
 static char			*ft_change(unsigned int temp, int len)
 {
-	char	*main;
-	char	*str;
+	char			*main;
+	char			*str;
 
 	str = (char *)malloc(len + 1);
 	if (!str)
@@ -88,6 +87,5 @@ int					ft_put_x(t_chk *s, va_list ap)
 	if (!(x = ft_change(temp, len)))
 		return (_ERROR);
 	x_len += ft_precision_minus(x, s, len);
-
 	return (x_len);
 }

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 20:47:20 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/11 21:15:30 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,5 @@ t_chk			*ft_flag_chk(char **point, va_list ap)
 	ft_chk_width(point, s, ap);
 	ft_chk_precision(point, s, ap);
 	ft_chk_type(point, s);
-
 	return (s);
 }
