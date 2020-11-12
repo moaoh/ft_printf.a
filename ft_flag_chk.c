@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 13:42:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 21:15:30 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 17:12:45 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ static void		ft_chk_type(char **point, t_chk *s)
 	}
 }
 
+// -,0 [1~9 or *].[1~9 or *]type
 t_chk			*ft_flag_chk(char **point, va_list ap)
 {
 	t_chk		*s;
