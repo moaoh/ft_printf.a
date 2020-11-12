@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/12 13:19:29 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 16:30:28 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ int				ft_prt_uint(unsigned int d);
 int				ft_width_print(int width, int len);
 int				ft_precision_print(int	precision, int len);
 t_chk			*ft_chk_bzero(void);
+void			ft_prt_minus(int *d_minus);
+int				ft_zero_print(t_chk *s, int long_len, \
+								int *final_len, int d_minus);
 
 int				ft_d_size(long long d);
 int				ft_x_size(unsigned int x);

@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 14:30:46 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 21:21:32 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 16:26:17 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,7 @@ static int			ft_precision_minus(char *x, t_chk *s, int len)
 	}
 	else
 	{
-		if (s->f_zero == 1 && s->precision == 0)
-			x_len += ft_precision_print(s->width, long_len);
-		else
-			x_len += ft_width_print(s->width, long_len);
+		ft_zero_print(s, long_len, &x_len, 0);
 		x_len += ft_x_print(x, s, len);
 	}
 	return (x_len);

@@ -6,16 +6,19 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 12:59:15 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 17:53:25 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 16:32:34 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		ft_prt_minus(int *d_minus)
+void			ft_prt_minus(int *d_minus)
 {
-	write(1, "-", 1);
-	*d_minus = -1;
+	if (*d_minus == 1)
+	{
+		write(1, "-", 1);
+		*d_minus = -1;
+	}
 }
 
 static int		ft_minus(long long *d, int *d_minus)
@@ -58,14 +61,7 @@ static int		ft_precision_minus(long long d, t_chk *s, int len, int d_minus)
 	}
 	else
 	{
-		if (s->f_zero == 1 && s->precision == 0)
-		{
-			if (d_minus == 1)
-				ft_prt_minus(&d_minus);
-			d_len += ft_precision_print(s->width, long_len);
-		}
-		else
-			d_len += ft_width_print(s->width, long_len);
+		d_minus = ft_zero_print(s, long_len, &d_len, d_minus);
 		d_len += ft_int_print(d, s, len, d_minus);
 	}
 	return (d_len);
