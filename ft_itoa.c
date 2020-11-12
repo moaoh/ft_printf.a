@@ -6,17 +6,17 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 14:55:52 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/10 17:56:39 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 13:07:42 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *s)
+char			*ft_strdup(const char *s)
 {
-	int		i;
-	int		len;
-	char	*str;
+	int			i;
+	int			len;
+	char		*str;
 
 	i = 0;
 	len = ft_strlen(s);
@@ -31,10 +31,9 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-// int -> char
 static int		count(long long n)
 {
-	int		len;
+	int			len;
 
 	len = 0;
 	if (n < 0)
@@ -64,8 +63,8 @@ static void		ft_print(char *str, long long n, int len)
 
 char			*ft_itoa(long long n)
 {
-	char	*str;
-	int		len;
+	char		*str;
+	int			len;
 
 	if (n == 0)
 		return (ft_strdup("0"));
@@ -75,6 +74,5 @@ char			*ft_itoa(long long n)
 		return (0);
 	str[len] = '\0';
 	ft_print(str, n, len - 1);
-
 	return (str);
 }

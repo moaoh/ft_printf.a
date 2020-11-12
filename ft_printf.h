@@ -6,12 +6,12 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 14:35:30 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 19:51:46 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 13:19:29 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef FT_PRINTF
-#	define FT_PRINTF
+#	ifndef FT_PRINTF_H
+#	define FT_PRINTF_H
 
 #	include <stdarg.h>
 #	include <stdlib.h>
@@ -30,36 +30,31 @@ typedef struct	s_chk
 
 #	define _ERROR -1
 
-// main part
-int			ft_printf(const char *format, ...);
-int			ft_format_type(char **format, va_list ap);
-t_chk		*ft_flag_chk(char **point, va_list ap);
+int				ft_printf(const char *format, ...);
+int				ft_format_type(char **format, va_list ap);
+t_chk			*ft_flag_chk(char **point, va_list ap);
 
-// utils
-char		*ft_itoa(long long n);
-size_t		ft_strlen(const char *str);
-char		*ft_strdup(const char *s);
-void		ft_bzero(void *ptr, size_t size);
+char			*ft_itoa(long long n);
+size_t			ft_strlen(const char *str);
+char			*ft_strdup(const char *s);
+void			ft_bzero(void *ptr, size_t size);
 
-// type
-int			ft_put_c(t_chk *s, va_list ap);
-int			ft_put_d(t_chk *s, va_list ap);
-int			ft_put_u(t_chk *s, va_list ap);
-int			ft_put_s(t_chk *s, va_list ap);
-int			ft_put_p(t_chk *s, va_list ap);
-int			ft_put_x(t_chk *s, va_list ap);
-int			ft_put_xlarge(t_chk *s, va_list ap);
+int				ft_put_c(t_chk *s, va_list ap);
+int				ft_put_d(t_chk *s, va_list ap);
+int				ft_put_u(t_chk *s, va_list ap);
+int				ft_put_s(t_chk *s, va_list ap);
+int				ft_put_p(t_chk *s, va_list ap);
+int				ft_put_x(t_chk *s, va_list ap);
+int				ft_put_xlarge(t_chk *s, va_list ap);
 
-//printf_flag
-int			ft_prt_int(long long d);
-int			ft_prt_uint(unsigned int d);
-int			ft_width_print(int width, int len);
-int			ft_precision_print(int	precision, int len);
-t_chk		*ft_chk_bzero(void);
+int				ft_prt_int(long long d);
+int				ft_prt_uint(unsigned int d);
+int				ft_width_print(int width, int len);
+int				ft_precision_print(int	precision, int len);
+t_chk			*ft_chk_bzero(void);
 
-//ft_type_size
-int			ft_d_size(long long d);
-int			ft_x_size(unsigned int x);
-int			ft_p_size(long long p);
+int				ft_d_size(long long d);
+int				ft_x_size(unsigned int x);
+int				ft_p_size(long long p);
 
 #	endif

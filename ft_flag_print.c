@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:56:49 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 20:58:02 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 13:16:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			ft_width_print(int width, int len)
 	return (width_len);
 }
 
-int			ft_precision_print(int	precision, int len)
+int			ft_precision_print(int precision, int len)
 {
 	int		precision_len;
 
