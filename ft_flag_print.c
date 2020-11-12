@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 19:56:49 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/12 16:31:01 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 17:06:19 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int			ft_prt_uint(unsigned int d)
 
 	str = ft_itoa((long long)d);
 	write(1, str, ft_strlen(str));
+	free(str);
 	return (ft_strlen(str));
 }
 
@@ -27,6 +28,7 @@ int			ft_prt_int(long long d)
 
 	str = ft_itoa((long long)d);
 	write(1, str, ft_strlen(str));
+	free(str);
 	return (ft_strlen(str));
 }
 

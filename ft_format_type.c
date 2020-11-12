@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 16:40:37 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 21:16:41 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 16:52:02 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int		ft_format_type(char **point, va_list ap)
 		str_len += ft_put_xlarge(s, ap);
 	if (s->type == '%')
 		str_len += ft_put_c(s, ap);
+	free(s);
 	return (str_len);
 }

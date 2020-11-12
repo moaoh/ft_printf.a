@@ -6,7 +6,7 @@
 /*   By: junmkang <junmkang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 19:54:42 by junmkang          #+#    #+#             */
-/*   Updated: 2020/11/11 21:21:58 by junmkang         ###   ########.fr       */
+/*   Updated: 2020/11/12 17:00:06 by junmkang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ int				ft_put_p(t_chk *s, va_list ap)
 	if (!(p = ft_change(temp, len)))
 		return (_ERROR);
 	p_len += ft_precision_minus(p, s, len);
+	free(p);
 	return (p_len);
 }
